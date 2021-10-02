@@ -120,7 +120,7 @@ module.exports = {
 				const install = chalk(
 					`run ${chalk.green('npm i weky@latest')} to update`,
 				);
-				boxConsole([msg, tip, install]);
+// 				boxConsole([msg, tip, install]);
 			}
 		} else if (package.devDependencies.weky) {
 			if (vLatest !== package.devDependencies.weky.slice(1)) {
@@ -137,7 +137,7 @@ module.exports = {
 				const install = chalk(
 					`run ${chalk.green('npm i weky@latest')} to update`,
 				);
-				boxConsole([msg, tip, install]);
+// 				boxConsole([msg, tip, install]);
 			}
 		}
 	},
