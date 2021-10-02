@@ -17,7 +17,7 @@ module.exports = async (options) => {
 	}
 
 	if (!options.embed.title) {
-		options.embed.title = 'Snake | Weky Development';
+		options.embed.title = 'Snake';
 	}
 	if (typeof options.embed.title !== 'string') {
 		throw new TypeError('Weky Error: title must be a string.');
@@ -36,7 +36,7 @@ module.exports = async (options) => {
 	}
 
 	if (!options.embed.footer) {
-		options.embed.footer = '©️ Weky Development';
+		options.embed.footer = ' ';
 	}
 	if (typeof options.embed.footer !== 'string') {
 		throw new TypeError('Weky Error: embed footer must be a string.');
@@ -88,7 +88,7 @@ module.exports = async (options) => {
 	}
 
 	if (!options.othersMessage) {
-		options.othersMessage = 'Only <@{{author}}> can use the buttons!';
+		options.othersMessage = 'These buttons are not for you!';
 	}
 	if (typeof options.othersMessage !== 'string') {
 		throw new TypeError('Weky Error: othersMessage must be a string.');
@@ -97,6 +97,10 @@ module.exports = async (options) => {
 	if (!options.buttonText) options.buttonText = 'Cancel';
 	if (typeof options.buttonText !== 'string') {
 		throw new TypeError('Weky Error: buttonText must be a string.');
+	}
+
+	if (!options.client) {
+		options.client = undefined;
 	}
 
 	if (data.has(options.message.author.id)) return;
@@ -322,14 +326,17 @@ module.exports = async (options) => {
 			.setDisabled();
 		inGame = false;
 
+		const multi = 25;
+
 		const editEmbed = new Discord.MessageEmbed()
 			.setColor(options.embed.color)
 			.setTitle(options.embed.title)
 			.setFooter(options.embed.footer)
-			.setDescription(options.embed.description.replace('{{score}}', score));
-		if (options.embed.timestamp) {
-			editEmbed.setTimestamp();
-		}
+			.setDescription(options.embed.description.replace('{{score}}', score*multi));
+
+		if (options.client !== undefined) options.client.add(options.message.author.id, score*multi);
+		
+		if (options.embed.timestamp) editEmbed.setTimestamp();
 
 		m.edit({
 			embeds: [editEmbed],
