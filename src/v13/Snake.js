@@ -334,7 +334,7 @@ module.exports = async (options) => {
 			.setFooter(options.embed.footer)
 			.setDescription(options.embed.description.replace('{{score}}', score*multi));
 
-		if (options.client !== undefined) options.client.add(options.message.author.id, score*multi, options.message);
+		if (options.client !== undefined) options.client.add(options.message.author.id, score*multi, 0, options.message);
 		
 		if (options.embed.timestamp) editEmbed.setTimestamp();
 
