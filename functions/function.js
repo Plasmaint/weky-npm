@@ -107,36 +107,36 @@ module.exports = {
 		const vLatest = require('../package.json').version;
 		if (package.dependencies.weky) {
 			if (vLatest !== package.dependencies.weky.slice(1)) {
-				const msg = chalk(
-					`new ${chalk.green('version')} of ${chalk.yellow(
-						'weky',
-					)} is available! ${chalk.red(
-						package.dependencies.weky.slice(1),
-					)} -> ${chalk.green(vLatest)}`,
-				);
-				const tip = chalk(
-					`registry ${chalk.cyan('https://www.npmjs.com/package/weky')}`,
-				);
-				const install = chalk(
-					`run ${chalk.green('npm i weky@latest')} to update`,
-				);
+// 				const msg = chalk(
+// 					`new ${chalk.green('version')} of ${chalk.yellow(
+// 						'weky',
+// 					)} is available! ${chalk.red(
+// 						package.dependencies.weky.slice(1),
+// 					)} -> ${chalk.green(vLatest)}`,
+// 				);
+// 				const tip = chalk(
+// 					`registry ${chalk.cyan('https://www.npmjs.com/package/weky')}`,
+// 				);
+// 				const install = chalk(
+// 					`run ${chalk.green('npm i weky@latest')} to update`,
+// 				);
 // 				boxConsole([msg, tip, install]);
 			}
 		} else if (package.devDependencies.weky) {
 			if (vLatest !== package.devDependencies.weky.slice(1)) {
-				const msg = chalk(
-					`new ${chalk.green('version')} of ${chalk.yellow(
-						'weky',
-					)} is available! ${chalk.red(
-						package.devDependencies.weky.slice(1),
-					)} -> ${chalk.green(vLatest)}`,
-				);
-				const tip = chalk(
-					`registry ${chalk.cyan('https://www.npmjs.com/package/weky')}`,
-				);
-				const install = chalk(
-					`run ${chalk.green('npm i weky@latest')} to update`,
-				);
+// 				const msg = chalk(
+// 					`new ${chalk.green('version')} of ${chalk.yellow(
+// 						'weky',
+// 					)} is available! ${chalk.red(
+// 						package.devDependencies.weky.slice(1),
+// 					)} -> ${chalk.green(vLatest)}`,
+// 				);
+// 				const tip = chalk(
+// 					`registry ${chalk.cyan('https://www.npmjs.com/package/weky')}`,
+// 				);
+// 				const install = chalk(
+// 					`run ${chalk.green('npm i weky@latest')} to update`,
+// 				);
 // 				boxConsole([msg, tip, install]);
 			}
 		}
