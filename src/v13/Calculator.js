@@ -16,7 +16,7 @@ module.exports = async (options) => {
 	}
 
 	if (!options.embed.title) {
-		options.embed.title = 'Calculator | Weky Development';
+		options.embed.title = 'Calculator';
 	}
 	if (typeof options.embed.title !== 'string') {
 		throw new TypeError('Weky Error: embed title must be a string.');
@@ -28,7 +28,7 @@ module.exports = async (options) => {
 	}
 
 	if (!options.embed.footer) {
-		options.embed.footer = '©️ Weky Development';
+		options.embed.footer = '9 + 10 = 21';
 	}
 	if (typeof options.embed.footer !== 'string') {
 		throw new TypeError('Weky Error: embed footer must be a string.');
@@ -54,7 +54,7 @@ module.exports = async (options) => {
 	}
 
 	if (!options.othersMessage) {
-		options.othersMessage = 'Only <@{{author}}> can use the buttons!';
+		options.othersMessage = 'These are not for you!';
 	}
 	if (typeof options.othersMessage !== 'string') {
 		throw new TypeError('Weky Error: othersMessage must be a string.');
